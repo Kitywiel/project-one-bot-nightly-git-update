@@ -1,6 +1,7 @@
 // Bot Server - This code will be pulled from git and auto-updated
 console.log('🤖 Bot Server Started!');
 console.log(`Started at: ${new Date().toISOString()}`);
+console.log('hi');
 
 let counter = 0;
 
