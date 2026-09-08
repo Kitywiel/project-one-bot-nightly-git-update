@@ -1,7 +1,5 @@
-export { bot, log };
-import { bot } from '../handlers/bot-creator';
-import { log } from './Console-log';
-export { moduleTrigger };
-import { moduleTrigger } from '../modules/moduleTrigger';
-export { botSettings };
-import { botSettings } from '../handlers/settings-bot';
+export { bot } from '../handlers/bot-creator';
+export { log } from './Console-log';
+export { moduleTrigger } from '../modules/moduleTrigger';
+export { botSettings } from '../handlers/settings-bot';
+export { handleAddon } from '../handlers/addon-handeler';

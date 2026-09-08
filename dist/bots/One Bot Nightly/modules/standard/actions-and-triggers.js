@@ -4,7 +4,6 @@ exports.startLisners = startLisners;
 const exports_1 = require("../../utils/exports");
 function startLisners() {
     exports_1.bot.on('physicsTick', () => {
-        // handle physics tick event
     });
     exports_1.bot.on('chat', (username, message) => {
         exports_1.log.chat(username, message);

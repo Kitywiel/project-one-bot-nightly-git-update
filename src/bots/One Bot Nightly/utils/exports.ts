@@ -1,15 +1,11 @@
 //  standard expotrs
-export { bot, log }
-
-import { bot } from '../handlers/bot-creator'
-import { log } from './Console-log'
+export { bot } from '../handlers/bot-creator' 
+export { log } from './Console-log'
 
 // modules exports
-export { moduleTrigger }
-
-import { moduleTrigger } from '../modules/moduleTrigger'
+export { moduleTrigger }from '../modules/moduleTrigger'
 
 // settings exports
-export { botSettings }
+export { botSettings } from '../handlers/settings-bot'
 
-import { botSettings } from '../handlers/settings-bot'
+export { handleAddon } from '../handlers/addon-handeler'

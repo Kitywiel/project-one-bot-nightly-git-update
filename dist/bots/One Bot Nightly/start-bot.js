@@ -6,6 +6,7 @@ const Start = () => {
     // sets the login value
     exports_1.moduleTrigger.crackedLogin();
     exports_1.moduleTrigger.triggers();
+    (0, exports_1.handleAddon)();
 };
 exports.Start = Start;
 //# sourceMappingURL=start-bot.js.map

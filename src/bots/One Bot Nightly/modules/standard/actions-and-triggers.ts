@@ -3,7 +3,7 @@ import { bot, log } from '../../utils/exports'
 
 export function startLisners(): void {
   bot.on('physicsTick', () => {
-    // handle physics tick event
+    
   });
 
   bot.on('chat', (username, message) => {
