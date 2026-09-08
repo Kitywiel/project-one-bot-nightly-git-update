@@ -11,15 +11,18 @@ export function startLisners(): void {
     // handle chat event
   });
 
-  // bot.on('entity', (entity) => {
+  bot.on('message', (message) => {
+    log.info(`Message: ${message}`);
+  });
 
-  // });
   bot.on('error', (err) => {
     log.info(`Error: ${err}`);
   });
+
   bot.on('end', (reason) => {
     log.info(`Warning: ${reason}`);
   });
+
   bot.on('kicked', (reason) => {
     log.info(`Kicked: ${reason}`);
   });
