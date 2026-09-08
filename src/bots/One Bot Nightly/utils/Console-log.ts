@@ -10,6 +10,6 @@ export const log = {
       console.log(`\x1b[1;90m[\x1b[36mOne Bot Nightly\x1b[1;90m](\x1b[94mCHAT\x1b[1;90m): <${user}>:\x1b[0m ${message}`)
     }
   },
-  joined: (player: unknown) => console.log(`\x1b[1;90m[\x1b[36mOne Bot Nightly\x1b[1;90m](\x1b[92mJOINED\x1b[1;90m):\x1b[0m ${player} has joined the game`),
-  left: (player: unknown) => console.log(`\x1b[1;90m[\x1b[36mOne Bot Nightly\x1b[1;90m](\x1b[91mLEFT\x1b[1;90m):\x1b[0m ${player} has left the game`)
+  joined: (player: string) => console.log(`\x1b[1;90m[\x1b[36mOne Bot Nightly\x1b[1;90m](\x1b[92mJOINED\x1b[1;90m):\x1b[0m ${player} has joined the game`),
+  left: (player: string) => console.log(`\x1b[1;90m[\x1b[36mOne Bot Nightly\x1b[1;90m](\x1b[91mLEFT\x1b[1;90m):\x1b[0m ${player} has left the game`)
 }
