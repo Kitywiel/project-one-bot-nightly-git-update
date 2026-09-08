@@ -4,7 +4,7 @@ export { bot }
 const bot = mineflayer.createBot({
   host: '10b10t.com',
   port: 25565,
-  username: 'KityBot'
+  username: 'Kitybot'
 });
 
 let userlogin = process.argv[2];

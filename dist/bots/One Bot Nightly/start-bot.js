@@ -9,7 +9,7 @@ const Console_log_1 = require("./utils/Console-log");
 const bot = mineflayer_1.default.createBot({
     host: '10b10t.com',
     port: 25565,
-    username: 'KityBot'
+    username: 'Kitybot'
 });
 exports.bot = bot;
 let userlogin = process.argv[2];
