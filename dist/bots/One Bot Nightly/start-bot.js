@@ -9,9 +9,11 @@ const Console_log_1 = require("./utils/Console-log");
 const bot = mineflayer_1.default.createBot({
     host: '10b10t.com',
     port: 25565,
-    username: 'kitybot'
+    username: 'KityBot'
 });
 exports.bot = bot;
+let userlogin = process.argv[2];
+bot.physicsEnabled = false;
 bot.on('spawn', () => {
     Console_log_1.log.info('Bot has spawned');
 });
@@ -23,6 +25,9 @@ bot.on('end', () => {
 });
 bot.on('messagestr', (message) => {
     Console_log_1.log.info(`Bot received a message: ${message}`);
+    if (message.includes('/login')) {
+        bot.chat(`/login ${userlogin}`);
+    }
 });
 bot.on('kicked', (reason, loggedIn) => {
     console.log('Bot was kicked from the server:', reason, 'Logged in:', loggedIn);

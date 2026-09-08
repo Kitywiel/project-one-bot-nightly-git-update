@@ -4,8 +4,11 @@ export { bot }
 const bot = mineflayer.createBot({
   host: '10b10t.com',
   port: 25565,
-  username: 'kitybot'
+  username: 'KityBot'
 });
+
+let userlogin = process.argv[2];
+bot.physicsEnabled = false
 
 bot.on('spawn', () => {
   log.info('Bot has spawned');
@@ -21,6 +24,9 @@ bot.on('end', () => {
 
 bot.on('messagestr', (message) => {
   log.info(`Bot received a message: ${message}`);
+  if (message.includes('/login')) {
+    bot.chat(`/login ${userlogin}`);
+  }
 });
 
 bot.on('kicked', (reason, loggedIn) => {
