@@ -11,6 +11,15 @@ function startLisners() {
     });
     // bot.on('entity', (entity) => {
     // });
+    exports_1.bot.on('error', (err) => {
+        exports_1.log.info(`Error: ${err}`);
+    });
+    exports_1.bot.on('end', (reason) => {
+        exports_1.log.info(`Warning: ${reason}`);
+    });
+    exports_1.bot.on('kicked', (reason) => {
+        exports_1.log.info(`Kicked: ${reason}`);
+    });
     exports_1.bot.on('playerJoined', (player) => {
         exports_1.log.joined(player);
     });
