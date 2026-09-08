@@ -1,7 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const exports_1 = require("./bots/One Bot Nightly/utils/exports");
-exports_1.bot.on('login', () => {
-    console.log('Bot has logged in');
-});
+const start_bot_1 = require("./bots/One Bot Nightly/start-bot");
+(0, start_bot_1.Start)();
 //# sourceMappingURL=start.js.map

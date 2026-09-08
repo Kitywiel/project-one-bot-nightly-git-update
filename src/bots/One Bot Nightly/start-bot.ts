@@ -1,5 +1,5 @@
 import { bot, log, moduleTrigger } from './utils/exports'
-
+export const Start = () => {
 // sets the login value
 moduleTrigger.crackedLogin();
 moduleTrigger.triggers();
@@ -36,3 +36,4 @@ moduleTrigger.triggers();
   bot.on('playerLeft', (player) => {
     log.left(player);
   });
+}

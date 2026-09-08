@@ -1,1 +1,1 @@
-export {};
+export declare const Start: () => void;
