@@ -9,7 +9,7 @@ const Console_log_1 = require("./utils/Console-log");
 const bot = mineflayer_1.default.createBot({
     host: '10b10t.com',
     port: 25565,
-    username: 'Kitybot'
+    username: 'KityBot'
 });
 exports.bot = bot;
 let userlogin = process.argv[2];
@@ -32,4 +32,6 @@ bot.on('messagestr', (message) => {
 bot.on('kicked', (reason, loggedIn) => {
     console.log('Bot was kicked from the server:', reason, 'Logged in:', loggedIn);
 });
+console.log(bot.username);
+console.log(userlogin);
 //# sourceMappingURL=start-bot.js.map

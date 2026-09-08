@@ -4,7 +4,7 @@ export { bot }
 const bot = mineflayer.createBot({
   host: '10b10t.com',
   port: 25565,
-  username: 'Kitybot'
+  username: 'KityBot'
 });
 
 let userlogin = process.argv[2];
@@ -32,3 +32,6 @@ bot.on('messagestr', (message) => {
 bot.on('kicked', (reason, loggedIn) => {
   console.log('Bot was kicked from the server:', reason, 'Logged in:', loggedIn);
 });
+
+console.log(bot.username)
+console.log(userlogin)
