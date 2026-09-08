@@ -1,6 +1,6 @@
 export declare const botSettings: {
     host: string;
-    port: string | number;
+    port: number;
     username: string;
     password: string | undefined;
     auth: string;

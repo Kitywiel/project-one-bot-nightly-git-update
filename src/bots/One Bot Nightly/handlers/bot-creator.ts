@@ -1,7 +1,9 @@
 import mineflayer from 'mineflayer'
+import { botSettings } from './settings-bot'
 
 export const bot = mineflayer.createBot({
-  host: '10b10t.com',
-  port: 25565,
-  username: 'KityBot'
+  host: botSettings.host,
+  port: botSettings.port,
+  username: botSettings.username,
+  // auth: botSettings.auth,
 });
