@@ -16,23 +16,26 @@ function crackedLogin() {
         // lissens to the login commands
         exports_1.bot.on('messagestr', (message) => {
             // checks if already logged in
-            if (loggedIn)
-                return;
-            // lissens to the login/register commands
-            if (message.includes('/login'))
-                exports_1.bot.chat(`/login ${exports_1.botSettings.password}`);
-            if (message.includes('/register'))
-                exports_1.bot.chat(`/register ${exports_1.botSettings.password} ${exports_1.botSettings.password}`);
-            // lissens if the login was successful
-            if (message.toLowerCase().includes('logged in')) {
-                loggedIn = true;
-                exports_1.log.success('Logged in successfully');
-                exports_1.log.info('ending save login in 1 second');
-                // sets a timeout to re-enable physics after 1 second
-                setTimeout(() => {
-                    exports_1.bot.physicsEnabled = true;
-                    exports_1.log.info('save login ended');
-                }, 1000);
+            if (!loggedIn) {
+                // logs messages
+                exports_1.log.info(`message: ${message}`);
+                // lissens to the login/register commands
+                if (message.includes('/login'))
+                    exports_1.bot.chat(`/login ${exports_1.botSettings.password}`);
+                if (message.includes('/register'))
+                    exports_1.bot.chat(`/register ${exports_1.botSettings.password} ${exports_1.botSettings.password}`);
+                // lissens if the login was successful
+                if (message.toLowerCase().includes('logged in')) {
+                    loggedIn = true;
+                    exports_1.log.success('Logged in successfully');
+                    exports_1.log.info('ending save login in 1 second');
+                    // sets a timeout to re-enable physics after 1 second
+                    setTimeout(() => {
+                        exports_1.bot.physicsEnabled = true;
+                        exports_1.log.info('save login ended');
+                    }, 1000);
+                }
+                ;
             }
             ;
         });
@@ -47,28 +50,31 @@ function crackedLogin() {
             return;
         // lissens to the login commands
         exports_1.bot.on('messagestr', (message) => {
-            // checks if already logged in
-            if (loggedIn)
-                return;
-            // lissens to the login/register commands
-            if (message.includes('/login'))
-                exports_1.bot.chat(`/login ${exports_1.botSettings.password}`);
-            if (message.includes('/register'))
-                exports_1.bot.chat(`/register ${exports_1.botSettings.password} ${exports_1.botSettings.password}`);
-            // lissens if the login was successful
-            if (message.toLowerCase().includes('logged in')) {
-                loggedIn = true;
-                exports_1.log.success('Logged in successfully');
-                exports_1.bot.physicsEnabled = true;
-                exports_1.log.info('save login ended');
+            // checks if not already logged in
+            if (!loggedIn) {
+                // logs messages
+                exports_1.log.info(`message: ${message}`);
+                // lissens to the login/register commands
+                if (message.includes('/login'))
+                    exports_1.bot.chat(`/login ${exports_1.botSettings.password}`);
+                if (message.includes('/register'))
+                    exports_1.bot.chat(`/register ${exports_1.botSettings.password} ${exports_1.botSettings.password}`);
+                // lissens if the login was successful
+                if (message.toLowerCase().includes('logged in')) {
+                    loggedIn = true;
+                    exports_1.log.success('Logged in successfully');
+                    exports_1.bot.physicsEnabled = true;
+                    exports_1.log.info('save login ended');
+                }
+                ;
+                exports_1.bot.once('spawn', () => {
+                    loggedIn = true;
+                    exports_1.log.success('Logged in successfully');
+                    exports_1.bot.physicsEnabled = true;
+                    exports_1.log.info('save login ended');
+                });
             }
             ;
-            exports_1.bot.once('spawn', () => {
-                loggedIn = true;
-                exports_1.log.success('Logged in successfully');
-                exports_1.bot.physicsEnabled = true;
-                exports_1.log.info('save login ended');
-            });
         });
     }
     else {
@@ -80,17 +86,20 @@ function crackedLogin() {
         // lissens to the login/register commands
         exports_1.bot.on('messagestr', (message) => {
             // checks if already logged in
-            if (loggedIn)
-                return;
-            // lissens to the login/register commands
-            if (message.includes('/login'))
-                exports_1.bot.chat(`/login ${exports_1.botSettings.password}`);
-            if (message.includes('/register'))
-                exports_1.bot.chat(`/register ${exports_1.botSettings.password} ${exports_1.botSettings.password}`);
-            // lissens if the login was successful
-            if (message.toLowerCase().includes('logged in')) {
-                loggedIn = true;
-                exports_1.log.success('Logged in successfully');
+            if (!loggedIn) {
+                // logs messages
+                exports_1.log.info(`message: ${message}`);
+                // lissens to the login/register commands
+                if (message.includes('/login'))
+                    exports_1.bot.chat(`/login ${exports_1.botSettings.password}`);
+                if (message.includes('/register'))
+                    exports_1.bot.chat(`/register ${exports_1.botSettings.password} ${exports_1.botSettings.password}`);
+                // lissens if the login was successful
+                if (message.toLowerCase().includes('logged in')) {
+                    loggedIn = true;
+                    exports_1.log.success('Logged in successfully');
+                }
+                ;
             }
             ;
         });

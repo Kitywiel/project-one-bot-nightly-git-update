@@ -19,23 +19,27 @@ export function crackedLogin(): void {
     bot.on('messagestr', (message) => {
 
       // checks if already logged in
-      if (loggedIn) return;
+      if (!loggedIn) {
 
-      // lissens to the login/register commands
-      if (message.includes('/login')) bot.chat(`/login ${botSettings.password}`);
-      if (message.includes('/register')) bot.chat(`/register ${botSettings.password} ${botSettings.password}`)
+        // logs messages
+        log.info(`message: ${message}`);
 
-      // lissens if the login was successful
-      if (message.toLowerCase().includes('logged in')) {
-        loggedIn = true;
-        log.success('Logged in successfully');
-        log.info('ending save login in 1 second');
-        
-        // sets a timeout to re-enable physics after 1 second
-        setTimeout(() => {
-          bot.physicsEnabled = true;
-          log.info('save login ended');
-        }, 1000);
+        // lissens to the login/register commands
+        if (message.includes('/login')) bot.chat(`/login ${botSettings.password}`);
+        if (message.includes('/register')) bot.chat(`/register ${botSettings.password} ${botSettings.password}`)
+
+        // lissens if the login was successful
+        if (message.toLowerCase().includes('logged in')) {
+          loggedIn = true;
+          log.success('Logged in successfully');
+          log.info('ending save login in 1 second');
+
+          // sets a timeout to re-enable physics after 1 second
+          setTimeout(() => {
+            bot.physicsEnabled = true;
+            log.info('save login ended');
+          }, 1000);
+        };
       };
     });
   } else if (botSettings.forceSaveLogin) {
@@ -52,26 +56,30 @@ export function crackedLogin(): void {
     // lissens to the login commands
     bot.on('messagestr', (message) => {
 
-      // checks if already logged in
-      if (loggedIn) return;
+      // checks if not already logged in
+      if (!loggedIn) {
 
-      // lissens to the login/register commands
-      if (message.includes('/login')) bot.chat(`/login ${botSettings.password}`);
-      if (message.includes('/register')) bot.chat(`/register ${botSettings.password} ${botSettings.password}`);
+        // logs messages
+        log.info(`message: ${message}`);
 
-      // lissens if the login was successful
-      if (message.toLowerCase().includes('logged in')) {
-        loggedIn = true;
-        log.success('Logged in successfully');
-        bot.physicsEnabled = true;
-        log.info('save login ended');
+        // lissens to the login/register commands
+        if (message.includes('/login')) bot.chat(`/login ${botSettings.password}`);
+        if (message.includes('/register')) bot.chat(`/register ${botSettings.password} ${botSettings.password}`);
+
+        // lissens if the login was successful
+        if (message.toLowerCase().includes('logged in')) {
+          loggedIn = true;
+          log.success('Logged in successfully');
+          bot.physicsEnabled = true;
+          log.info('save login ended');
+        };
+        bot.once('spawn', () => {
+          loggedIn = true;
+          log.success('Logged in successfully');
+          bot.physicsEnabled = true;
+          log.info('save login ended');
+        });
       };
-      bot.once('spawn', () => {
-        loggedIn = true;
-        log.success('Logged in successfully');
-        bot.physicsEnabled = true;
-        log.info('save login ended');
-      });
     });
   } else {
     // sends info about normal login
@@ -84,16 +92,20 @@ export function crackedLogin(): void {
     bot.on('messagestr', (message) => {
 
       // checks if already logged in
-      if (loggedIn) return;
+      if (!loggedIn) {
 
-      // lissens to the login/register commands
-      if (message.includes('/login')) bot.chat(`/login ${botSettings.password}`);
-      if (message.includes('/register')) bot.chat(`/register ${botSettings.password} ${botSettings.password}`);
+        // logs messages
+        log.info(`message: ${message}`);
+        
+        // lissens to the login/register commands
+        if (message.includes('/login')) bot.chat(`/login ${botSettings.password}`);
+        if (message.includes('/register')) bot.chat(`/register ${botSettings.password} ${botSettings.password}`);
 
-      // lissens if the login was successful
-      if (message.toLowerCase().includes('logged in')) {
-        loggedIn = true 
-        log.success('Logged in successfully');
+        // lissens if the login was successful
+        if (message.toLowerCase().includes('logged in')) {
+          loggedIn = true 
+          log.success('Logged in successfully');
+        };
       };
     });
   };

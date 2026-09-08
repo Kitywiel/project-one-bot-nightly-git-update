@@ -7,7 +7,7 @@ export function startLisners(): void {
   });
 
   bot.on('chat', (username, message) => {
-    // handle chat event
+    log.chat(username, message);
   });
 
   bot.on('message', (message) => {

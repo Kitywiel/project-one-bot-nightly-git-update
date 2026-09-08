@@ -7,7 +7,7 @@ function startLisners() {
         // handle physics tick event
     });
     exports_1.bot.on('chat', (username, message) => {
-        // handle chat event
+        exports_1.log.chat(username, message);
     });
     exports_1.bot.on('message', (message) => {
         exports_1.log.info(`Message: ${message}`);
