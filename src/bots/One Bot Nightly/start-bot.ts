@@ -23,10 +23,13 @@ bot.on('end', () => {
 });
 
 bot.on('messagestr', (message) => {
-  log.info(`Bot received a message: ${message}`);
   if (message.includes('/login')) {
     bot.chat(`/login ${userlogin}`);
   }
+});
+
+bot.on('chat', (username, message) => {
+  log.chat(username, message);
 });
 
 bot.on('kicked', (reason, loggedIn) => {

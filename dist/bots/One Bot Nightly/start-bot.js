@@ -24,10 +24,12 @@ bot.on('end', () => {
     Console_log_1.log.info('Bot has disconnected');
 });
 bot.on('messagestr', (message) => {
-    Console_log_1.log.info(`Bot received a message: ${message}`);
     if (message.includes('/login')) {
         bot.chat(`/login ${userlogin}`);
     }
+});
+bot.on('chat', (username, message) => {
+    Console_log_1.log.chat(username, message);
 });
 bot.on('kicked', (reason, loggedIn) => {
     console.log('Bot was kicked from the server:', reason, 'Logged in:', loggedIn);
