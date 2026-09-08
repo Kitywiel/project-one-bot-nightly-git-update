@@ -2,9 +2,9 @@ import mineflayer from 'mineflayer'
 import { connect } from 'node:http2';
 
 const bot = mineflayer.createBot({
-  host: '2b2u.net',
+  host: '10b10t.com',
   port: 25565,
-  username: 'Bot'
+  username: 'Kitywiels_bot'
 });
 
 bot.on('spawn', () => {

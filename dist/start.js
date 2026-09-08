@@ -5,9 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mineflayer_1 = __importDefault(require("mineflayer"));
 const bot = mineflayer_1.default.createBot({
-    host: '2b2u.net',
+    host: '10b10t.com',
     port: 25565,
-    username: 'Bot'
+    username: 'Kitywiels_bot'
 });
 bot.on('spawn', () => {
     console.log('Bot has spawned');
