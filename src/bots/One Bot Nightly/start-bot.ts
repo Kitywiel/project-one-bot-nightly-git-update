@@ -12,6 +12,7 @@ bot.physicsEnabled = false
 
 bot.on('spawn', () => {
   log.info('Bot has spawned');
+  bot.chat('Hello, I am KityBot!');
 });
 
 bot.on('error', (err) => {

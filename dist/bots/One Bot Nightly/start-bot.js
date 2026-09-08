@@ -16,6 +16,7 @@ let userlogin = process.argv[2];
 bot.physicsEnabled = false;
 bot.on('spawn', () => {
     Console_log_1.log.info('Bot has spawned');
+    bot.chat('Hello, I am KityBot!');
 });
 bot.on('error', (err) => {
     console.error('Bot encountered an error:', err);
