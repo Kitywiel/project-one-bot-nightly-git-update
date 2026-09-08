@@ -31,6 +31,11 @@ bot.on('messagestr', (message) => {
 
 bot.on('chat', (username, message) => {
   log.chat(username, message);
+  if (username === 'moooomoooo') {
+    if (message === '[kitywiel] -quit') {
+      bot.quit();
+    }
+  }
 });
 
 bot.on('kicked', (reason, loggedIn) => {
