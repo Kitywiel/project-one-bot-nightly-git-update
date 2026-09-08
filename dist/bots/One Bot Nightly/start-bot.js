@@ -33,6 +33,7 @@ bot.on('chat', (username, message) => {
     Console_log_1.log.chat(username, message);
     if (username === 'moooomoooo') {
         if (message === '[kitywiel] -quit') {
+            bot.chat('Goodbye!');
             bot.quit();
         }
     }
