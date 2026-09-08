@@ -10,10 +10,6 @@ export function startLisners(): void {
     log.chat(username, message);
   });
 
-  bot.on('message', (message) => {
-    log.info(`Message: ${message}`);
-  });
-
   bot.on('error', (err) => {
     log.info(`Error: ${err}`);
   });

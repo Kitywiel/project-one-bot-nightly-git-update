@@ -9,9 +9,6 @@ function startLisners() {
     exports_1.bot.on('chat', (username, message) => {
         exports_1.log.chat(username, message);
     });
-    exports_1.bot.on('message', (message) => {
-        exports_1.log.info(`Message: ${message}`);
-    });
     exports_1.bot.on('error', (err) => {
         exports_1.log.info(`Error: ${err}`);
     });
