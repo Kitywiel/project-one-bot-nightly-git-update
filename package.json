@@ -1,0 +1,24 @@
+{
+  "name": "project-one-bot-new-and-inproofed",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Kitywiel",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc",
+    "start": "node dist/start.js",
+    "install": "npm install"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.8",
+    "mineflayer": "^4.39.0",
+    "typescript": "^7.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "rimraf": "^6.1.3"
+  }
+}
